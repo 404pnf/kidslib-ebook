@@ -1,1 +1,2 @@
-**/*.jpg
+pageimg-orig/**/*.jpg
+output-ebook/**/*.jpg
