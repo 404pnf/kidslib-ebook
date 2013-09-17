@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <!-- required files for booklet -->
+    <script src="../booklet/jquery.min.js" type="text/javascript"></script>
+    <script src="../booklet/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="../booklet/jquery.easing.1.3.js" type="text/javascript"></script>
+    <script src="../booklet/jquery.booklet.latest.js" type="text/javascript"></script>
+    <link href="../booklet/jquery.booklet.latest.css" type="text/css" rel="stylesheet" media="screen, projection, tv" />
+
+    <style type="text/css">
+  /*       body {background:#ccc; font:normal 12px/1.2 arial, verdana, sans-serif;} */
+        h1 { text-align: center }
+    </style>
+</head>
+<body>
+		<h1></h1>
+	  <div id="mybook">
+  			<img src="../pageimg/book_ys1012_001_001.jpg" />
+  			<img src="../pageimg/book_ys1012_001_002.jpg" />
+  			<img src="../pageimg/book_ys1012_001_003.jpg" />
+  			<img src="../pageimg/book_ys1012_001_004.jpg" />
+  			<img src="../pageimg/book_ys1012_001_005.jpg" />
+  			<img src="../pageimg/book_ys1012_001_006.jpg" />
+  			<img src="../pageimg/book_ys1012_001_007.jpg" />
+  			<img src="../pageimg/book_ys1012_001_008.jpg" />
+  			<img src="../pageimg/book_ys1012_001_009.jpg" />
+  			<img src="../pageimg/book_ys1012_001_010.jpg" />
+  			<img src="../pageimg/book_ys1012_001_011.jpg" />
+  			<img src="../pageimg/book_ys1012_001_012.jpg" />
+  			<img src="../pageimg/book_ys1012_001_013.jpg" />
+  			<img src="../pageimg/book_ys1012_002_001.jpg" />
+  			<img src="../pageimg/book_ys1012_002_002.jpg" />
+  			<img src="../pageimg/book_ys1012_002_003.jpg" />
+  			<img src="../pageimg/book_ys1012_002_004.jpg" />
+  			<img src="../pageimg/book_ys1012_002_005.jpg" />
+  			<img src="../pageimg/book_ys1012_002_006.jpg" />
+  			<img src="../pageimg/book_ys1012_002_007.jpg" />
+  			<img src="../pageimg/book_ys1012_002_008.jpg" />
+  			<img src="../pageimg/book_ys1012_002_009.jpg" />
+  			<img src="../pageimg/book_ys1012_002_010.jpg" />
+  			<img src="../pageimg/book_ys1012_002_011.jpg" />
+  			<img src="../pageimg/book_ys1012_002_012.jpg" />
+  			<img src="../pageimg/book_ys1012_002_013.jpg" />
+  			<img src="../pageimg/book_ys1012_003_001.jpg" />
+  			<img src="../pageimg/book_ys1012_003_002.jpg" />
+  			<img src="../pageimg/book_ys1012_003_003.jpg" />
+  			<img src="../pageimg/book_ys1012_003_004.jpg" />
+  			<img src="../pageimg/book_ys1012_003_005.jpg" />
+  			<img src="../pageimg/book_ys1012_004_001.jpg" />
+  			<img src="../pageimg/book_ys1012_004_002.jpg" />
+  			<img src="../pageimg/book_ys1012_004_003.jpg" />
+  			<img src="../pageimg/book_ys1012_004_004.jpg" />
+  			<img src="../pageimg/book_ys1012_004_005.jpg" />
+  			<img src="../pageimg/book_ys1012_004_006.jpg" />
+  			<img src="../pageimg/book_ys1012_004_007.jpg" />
+  			<img src="../pageimg/book_ys1012_005_001.jpg" />
+  			<img src="../pageimg/book_ys1012_005_002.jpg" />
+  			<img src="../pageimg/book_ys1012_005_003.jpg" />
+  			<img src="../pageimg/book_ys1012_005_004.jpg" />
+  			<img src="../pageimg/book_ys1012_005_005.jpg" />
+  			<img src="../pageimg/book_ys1012_006_001.jpg" />
+  			<img src="../pageimg/book_ys1012_006_002.jpg" />
+  			<img src="../pageimg/book_ys1012_006_003.jpg" />
+  			<img src="../pageimg/book_ys1012_006_004.jpg" />
+  			<img src="../pageimg/book_ys1012_006_005.jpg" />
+  			<img src="../pageimg/book_ys1012_007_001.jpg" />
+  			<img src="../pageimg/book_ys1012_007_002.jpg" />
+  			<img src="../pageimg/book_ys1012_007_003.jpg" />
+  			<img src="../pageimg/book_ys1012_007_004.jpg" />
+  			<img src="../pageimg/book_ys1012_007_005.jpg" />
+  			<img src="../pageimg/book_ys1012_007_006.jpg" />
+  			<img src="../pageimg/book_ys1012_007_007.jpg" />
+  			<img src="../pageimg/book_ys1012_008_001.jpg" />
+  			<img src="../pageimg/book_ys1012_008_002.jpg" />
+  			<img src="../pageimg/book_ys1012_008_003.jpg" />
+  			<img src="../pageimg/book_ys1012_008_004.jpg" />
+  			<img src="../pageimg/book_ys1012_008_005.jpg" />
+  			<img src="../pageimg/book_ys1012_008_006.jpg" />
+  			<img src="../pageimg/book_ys1012_008_007.jpg" />
+  			<img src="../pageimg/book_ys1012_009_001.jpg" />
+  			<img src="../pageimg/book_ys1012_009_002.jpg" />
+  			<img src="../pageimg/book_ys1012_009_003.jpg" />
+  			<img src="../pageimg/book_ys1012_009_004.jpg" />
+  			<img src="../pageimg/book_ys1012_009_005.jpg" />
+  			<img src="../pageimg/book_ys1012_010_001.jpg" />
+  			<img src="../pageimg/book_ys1012_010_002.jpg" />
+  			<img src="../pageimg/book_ys1012_010_003.jpg" />
+  			<img src="../pageimg/book_ys1012_010_004.jpg" />
+  			<img src="../pageimg/book_ys1012_010_005.jpg" />
+  			<img src="../pageimg/book_ys1012_010_006.jpg" />
+  			<img src="../pageimg/book_ys1012_010_007.jpg" />
+  			<img src="../pageimg/book_ys1012_010_008.jpg" />
+  			<img src="../pageimg/book_ys1012_010_009.jpg" />
+  			<img src="../pageimg/book_ys1012_011_001.jpg" />
+  			<img src="../pageimg/book_ys1012_011_002.jpg" />
+  			<img src="../pageimg/book_ys1012_011_003.jpg" />
+  			<img src="../pageimg/book_ys1012_011_004.jpg" />
+  			<img src="../pageimg/book_ys1012_011_005.jpg" />
+  			<img src="../pageimg/book_ys1012_011_006.jpg" />
+  			<img src="../pageimg/book_ys1012_011_007.jpg" />
+  			<img src="../pageimg/book_ys1012_012_001.jpg" />
+  			<img src="../pageimg/book_ys1012_012_002.jpg" />
+  			<img src="../pageimg/book_ys1012_012_003.jpg" />
+  			<img src="../pageimg/book_ys1012_012_004.jpg" />
+  			<img src="../pageimg/book_ys1012_012_005.jpg" />
+  			<img src="../pageimg/book_ys1012_013_001.jpg" />
+  			<img src="../pageimg/book_ys1012_013_002.jpg" />
+  			<img src="../pageimg/book_ys1012_013_003.jpg" />
+  			<img src="../pageimg/book_ys1012_013_004.jpg" />
+  			<img src="../pageimg/book_ys1012_013_005.jpg" />
+  			<img src="../pageimg/book_ys1012_014_001.jpg" />
+  			<img src="../pageimg/book_ys1012_014_002.jpg" />
+  			<img src="../pageimg/book_ys1012_014_003.jpg" />
+  			<img src="../pageimg/book_ys1012_014_004.jpg" />
+  			<img src="../pageimg/book_ys1012_014_005.jpg" />
+  			<img src="../pageimg/book_ys1012_015_001.jpg" />
+  			<img src="../pageimg/book_ys1012_015_002.jpg" />
+  			<img src="../pageimg/book_ys1012_015_003.jpg" />
+  			<img src="../pageimg/book_ys1012_016_001.jpg" />
+  			<img src="../pageimg/book_ys1012_016_002.jpg" />
+  			<img src="../pageimg/book_ys1012_016_003.jpg" />
+  			<img src="../pageimg/book_ys1012_017_001.jpg" />
+  			<img src="../pageimg/book_ys1012_017_002.jpg" />
+  			<img src="../pageimg/book_ys1012_017_003.jpg" />
+  			<img src="../pageimg/book_ys1012_017_004.jpg" />
+  			<img src="../pageimg/book_ys1012_017_005.jpg" />
+  			<img src="../pageimg/book_ys1012_017_006.jpg" />
+  			<img src="../pageimg/book_ys1012_017_007.jpg" />
+  			<img src="../pageimg/book_ys1012_018_001.jpg" />
+  			<img src="../pageimg/book_ys1012_018_002.jpg" />
+  			<img src="../pageimg/book_ys1012_018_003.jpg" />
+  			<img src="../pageimg/book_ys1012_019_001.jpg" />
+  			<img src="../pageimg/book_ys1012_019_002.jpg" />
+  			<img src="../pageimg/book_ys1012_019_003.jpg" />
+  			<img src="../pageimg/book_ys1012_020_001.jpg" />
+  			<img src="../pageimg/book_ys1012_020_002.jpg" />
+  			<img src="../pageimg/book_ys1012_020_003.jpg" />
+  			<img src="../pageimg/book_ys1012_020_004.jpg" />
+  			<img src="../pageimg/book_ys1012_020_005.jpg" />
+  			<img src="../pageimg/book_ys1012_020_006.jpg" />
+  			<img src="../pageimg/book_ys1012_020_007.jpg" />
+  			<img src="../pageimg/book_ys1012_020_008.jpg" />
+  			<img src="../pageimg/book_ys1012_020_009.jpg" />
+  			<img src="../pageimg/book_ys1012_021_001.jpg" />
+  			<img src="../pageimg/book_ys1012_021_002.jpg" />
+  			<img src="../pageimg/book_ys1012_021_003.jpg" />
+  			<img src="../pageimg/book_ys1012_021_004.jpg" />
+  			<img src="../pageimg/book_ys1012_021_005.jpg" />
+  			<img src="../pageimg/book_ys1012_021_006.jpg" />
+  			<img src="../pageimg/book_ys1012_021_007.jpg" />
+  			<img src="../pageimg/book_ys1012_021_008.jpg" />
+  			<img src="../pageimg/book_ys1012_021_009.jpg" />
+  			<img src="../pageimg/book_ys1012_021_010.jpg" />
+  			<img src="../pageimg/book_ys1012_021_011.jpg" />
+  			<img src="../pageimg/book_ys1012_022_001.jpg" />
+  			<img src="../pageimg/book_ys1012_022_002.jpg" />
+  			<img src="../pageimg/book_ys1012_022_003.jpg" />
+  			<img src="../pageimg/book_ys1012_022_004.jpg" />
+  			<img src="../pageimg/book_ys1012_022_005.jpg" />
+  			<img src="../pageimg/book_ys1012_023_001.jpg" />
+  			<img src="../pageimg/book_ys1012_023_002.jpg" />
+  			<img src="../pageimg/book_ys1012_023_003.jpg" />
+  			<img src="../pageimg/book_ys1012_024_001.jpg" />
+  			<img src="../pageimg/book_ys1012_024_002.jpg" />
+  			<img src="../pageimg/book_ys1012_024_003.jpg" />
+  			<img src="../pageimg/book_ys1012_025_001.jpg" />
+  			<img src="../pageimg/book_ys1012_025_002.jpg" />
+  			<img src="../pageimg/book_ys1012_025_003.jpg" />
+  			<img src="../pageimg/book_ys1012_025_004.jpg" />
+  			<img src="../pageimg/book_ys1012_025_005.jpg" />
+  			<img src="../pageimg/book_ys1012_025_006.jpg" />
+  			<img src="../pageimg/book_ys1012_025_007.jpg" />
+  			<img src="../pageimg/book_ys1012_026_001.jpg" />
+  			<img src="../pageimg/book_ys1012_026_002.jpg" />
+  			<img src="../pageimg/book_ys1012_026_003.jpg" />
+  			<img src="../pageimg/book_ys1012_026_004.jpg" />
+  			<img src="../pageimg/book_ys1012_026_005.jpg" />
+  			<img src="../pageimg/book_ys1012_027_001.jpg" />
+  			<img src="../pageimg/book_ys1012_027_002.jpg" />
+  			<img src="../pageimg/book_ys1012_027_003.jpg" />
+  			<img src="../pageimg/book_ys1012_028_001.jpg" />
+  			<img src="../pageimg/book_ys1012_028_002.jpg" />
+  			<img src="../pageimg/book_ys1012_028_003.jpg" />
+  			<img src="../pageimg/book_ys1012_028_004.jpg" />
+  			<img src="../pageimg/book_ys1012_028_005.jpg" />
+  			<img src="../pageimg/book_ys1012_029_001.jpg" />
+  			<img src="../pageimg/book_ys1012_029_002.jpg" />
+  			<img src="../pageimg/book_ys1012_029_003.jpg" />
+  			<img src="../pageimg/book_ys1012_029_004.jpg" />
+  			<img src="../pageimg/book_ys1012_029_005.jpg" />
+  			<img src="../pageimg/book_ys1012_030_001.jpg" />
+  			<img src="../pageimg/book_ys1012_030_002.jpg" />
+  			<img src="../pageimg/book_ys1012_030_003.jpg" />
+  			<img src="../pageimg/book_ys1012_030_004.jpg" />
+  			<img src="../pageimg/book_ys1012_030_005.jpg" />
+  			<img src="../pageimg/book_ys1012_030_006.jpg" />
+  			<img src="../pageimg/book_ys1012_030_007.jpg" />
+  			<img src="../pageimg/book_ys1012_030_008.jpg" />
+  			<img src="../pageimg/book_ys1012_030_009.jpg" />
+  			<img src="../pageimg/book_ys1012_031_001.jpg" />
+  			<img src="../pageimg/book_ys1012_031_002.jpg" />
+  			<img src="../pageimg/book_ys1012_031_003.jpg" />
+  			<img src="../pageimg/book_ys1012_031_004.jpg" />
+  			<img src="../pageimg/book_ys1012_031_005.jpg" />
+  			<img src="../pageimg/book_ys1012_032_001.jpg" />
+  			<img src="../pageimg/book_ys1012_032_002.jpg" />
+  			<img src="../pageimg/book_ys1012_032_003.jpg" />
+  			<img src="../pageimg/book_ys1012_033_001.jpg" />
+  			<img src="../pageimg/book_ys1012_033_002.jpg" />
+  			<img src="../pageimg/book_ys1012_033_003.jpg" />
+  			<img src="../pageimg/book_ys1012_033_004.jpg" />
+  			<img src="../pageimg/book_ys1012_033_005.jpg" />
+  			<img src="../pageimg/book_ys1012_034_001.jpg" />
+  			<img src="../pageimg/book_ys1012_034_002.jpg" />
+  			<img src="../pageimg/book_ys1012_034_003.jpg" />
+  			<img src="../pageimg/book_ys1012_034_004.jpg" />
+  			<img src="../pageimg/book_ys1012_034_005.jpg" />
+  			<img src="../pageimg/book_ys1012_034_006.jpg" />
+  			<img src="../pageimg/book_ys1012_034_007.jpg" />
+  			<img src="../pageimg/book_ys1012_035_001.jpg" />
+  			<img src="../pageimg/book_ys1012_035_002.jpg" />
+  			<img src="../pageimg/book_ys1012_035_003.jpg" />
+  			<img src="../pageimg/book_ys1012_035_004.jpg" />
+  			<img src="../pageimg/book_ys1012_035_005.jpg" />
+  			<img src="../pageimg/book_ys1012_036_001.jpg" />
+  			<img src="../pageimg/book_ys1012_036_002.jpg" />
+  			<img src="../pageimg/book_ys1012_036_003.jpg" />
+  			<img src="../pageimg/book_ys1012_037_001.jpg" />
+  			<img src="../pageimg/book_ys1012_037_002.jpg" />
+  			<img src="../pageimg/book_ys1012_037_003.jpg" />
+  			<img src="../pageimg/book_ys1012_037_004.jpg" />
+  			<img src="../pageimg/book_ys1012_037_005.jpg" />
+  			<img src="../pageimg/book_ys1012_038_001.jpg" />
+  			<img src="../pageimg/book_ys1012_038_002.jpg" />
+  			<img src="../pageimg/book_ys1012_038_003.jpg" />
+  			<img src="../pageimg/book_ys1012_038_004.jpg" />
+  			<img src="../pageimg/book_ys1012_038_005.jpg" />
+  			<img src="../pageimg/book_ys1012_038_006.jpg" />
+  			<img src="../pageimg/book_ys1012_038_007.jpg" />
+  			<img src="../pageimg/book_ys1012_038_008.jpg" />
+  			<img src="../pageimg/book_ys1012_038_009.jpg" />
+  			<img src="../pageimg/book_ys1012_038_010.jpg" />
+  			<img src="../pageimg/book_ys1012_038_011.jpg" />
+  			<img src="../pageimg/book_ys1012_039_001.jpg" />
+  			<img src="../pageimg/book_ys1012_039_002.jpg" />
+  			<img src="../pageimg/book_ys1012_039_003.jpg" />
+  			<img src="../pageimg/book_ys1012_039_004.jpg" />
+  			<img src="../pageimg/book_ys1012_039_005.jpg" />
+  			<img src="../pageimg/book_ys1012_039_006.jpg" />
+  			<img src="../pageimg/book_ys1012_039_007.jpg" />
+  			<img src="../pageimg/book_ys1012_040_001.jpg" />
+  			<img src="../pageimg/book_ys1012_040_002.jpg" />
+  			<img src="../pageimg/book_ys1012_040_003.jpg" />
+  			<img src="../pageimg/book_ys1012_040_004.jpg" />
+  			<img src="../pageimg/book_ys1012_040_005.jpg" />
+  			<img src="../pageimg/book_ys1012_041_001.jpg" />
+  			<img src="../pageimg/book_ys1012_041_002.jpg" />
+  			<img src="../pageimg/book_ys1012_041_003.jpg" />
+  			<img src="../pageimg/book_ys1012_042_001.jpg" />
+  			<img src="../pageimg/book_ys1012_042_002.jpg" />
+  			<img src="../pageimg/book_ys1012_042_003.jpg" />
+  			<img src="../pageimg/book_ys1012_042_004.jpg" />
+  			<img src="../pageimg/book_ys1012_042_005.jpg" />
+  			<img src="../pageimg/book_ys1012_042_006.jpg" />
+  			<img src="../pageimg/book_ys1012_042_007.jpg" />
+  			<img src="../pageimg/book_ys1012_043_001.jpg" />
+  			<img src="../pageimg/book_ys1012_043_002.jpg" />
+  			<img src="../pageimg/book_ys1012_043_003.jpg" />
+  			<img src="../pageimg/book_ys1012_043_004.jpg" />
+  			<img src="../pageimg/book_ys1012_043_005.jpg" />
+  			<img src="../pageimg/book_ys1012_044_001.jpg" />
+  			<img src="../pageimg/book_ys1012_044_002.jpg" />
+  			<img src="../pageimg/book_ys1012_044_003.jpg" />
+  			<img src="../pageimg/book_ys1012_044_004.jpg" />
+  			<img src="../pageimg/book_ys1012_044_005.jpg" />
+  			<img src="../pageimg/book_ys1012_044_006.jpg" />
+  			<img src="../pageimg/book_ys1012_044_007.jpg" />
+  			<img src="../pageimg/book_ys1012_045_001.jpg" />
+  			<img src="../pageimg/book_ys1012_045_002.jpg" />
+  			<img src="../pageimg/book_ys1012_045_003.jpg" />
+  			<img src="../pageimg/book_ys1012_045_004.jpg" />
+  			<img src="../pageimg/book_ys1012_045_005.jpg" />
+  			<img src="../pageimg/book_ys1012_045_006.jpg" />
+  			<img src="../pageimg/book_ys1012_045_007.jpg" />
+  			<img src="../pageimg/book_ys1012_045_008.jpg" />
+  			<img src="../pageimg/book_ys1012_045_009.jpg" />
+  			<img src="../pageimg/book_ys1012_046_001.jpg" />
+  			<img src="../pageimg/book_ys1012_046_002.jpg" />
+  			<img src="../pageimg/book_ys1012_046_003.jpg" />
+  			<img src="../pageimg/book_ys1012_046_004.jpg" />
+  			<img src="../pageimg/book_ys1012_046_005.jpg" />
+  			<img src="../pageimg/book_ys1012_047_001.jpg" />
+  			<img src="../pageimg/book_ys1012_047_002.jpg" />
+  			<img src="../pageimg/book_ys1012_047_003.jpg" />
+  			<img src="../pageimg/book_ys1012_048_001.jpg" />
+  			<img src="../pageimg/book_ys1012_048_002.jpg" />
+  			<img src="../pageimg/book_ys1012_048_003.jpg" />
+  			<img src="../pageimg/book_ys1012_048_004.jpg" />
+  			<img src="../pageimg/book_ys1012_048_005.jpg" />
+  			<img src="../pageimg/book_ys1012_048_006.jpg" />
+  			<img src="../pageimg/book_ys1012_048_007.jpg" />
+  			<img src="../pageimg/book_ys1012_049_001.jpg" />
+  			<img src="../pageimg/book_ys1012_049_002.jpg" />
+  			<img src="../pageimg/book_ys1012_049_003.jpg" />
+  			<img src="../pageimg/book_ys1012_050_001.jpg" />
+  			<img src="../pageimg/book_ys1012_050_002.jpg" />
+  			<img src="../pageimg/book_ys1012_050_003.jpg" />
+  			<img src="../pageimg/book_ys1012_050_004.jpg" />
+  			<img src="../pageimg/book_ys1012_050_005.jpg" />
+  			<img src="../pageimg/book_ys1012_050_006.jpg" />
+  			<img src="../pageimg/book_ys1012_050_007.jpg" />
+  			<img src="../pageimg/book_ys1012_051_001.jpg" />
+  			<img src="../pageimg/book_ys1012_051_002.jpg" />
+  			<img src="../pageimg/book_ys1012_051_003.jpg" />
+  			<img src="../pageimg/book_ys1012_051_004.jpg" />
+  			<img src="../pageimg/book_ys1012_051_005.jpg" />
+  			<img src="../pageimg/book_ys1012_051_006.jpg" />
+  			<img src="../pageimg/book_ys1012_051_007.jpg" />
+  			<img src="../pageimg/book_ys1012_052_001.jpg" />
+  			<img src="../pageimg/book_ys1012_052_002.jpg" />
+  			<img src="../pageimg/book_ys1012_052_003.jpg" />
+  			<img src="../pageimg/book_ys1012_052_004.jpg" />
+  			<img src="../pageimg/book_ys1012_052_005.jpg" />
+	  </div>
+
+	<script type="text/javascript">
+	    $(function () {
+	        $("#mybook").booklet({
+	        	closed: true,
+	        	arrows: true, //翻页箭头
+	        	pagePadding: 0, // default padding is 10px; bad bad!
+	        	shadows: false, // 不要让右边的页面有一层阴影覆盖着
+						width:  1130, // 两页加起来的宽度
+         		height: 800,
+         		//speed: 250,
+        		//pageNumbers: true,
+        		keyboard: true,
+	        	});
+	    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+有个问题请你指点一下
+
+1. 每两个div一起显示 拼成一本书的两面
+2. 偶数页有mp3
+3. 第0页其实没内容，随便弄张图站位
+4. 希望有翻页效果，翻到一页后，如果该页有mp3或该页的mp3可以播放，直接播放，循环播放
+
+我没有找到翻页效果能和mp3配合的。我想那部分必须要自己写js？
+
+例子：
+
+http://ilearning.cn/node/2998.html
+你需要修改一下本地的hosts
+ilearning.cn 218.247.244.23
+
+现在的方式我不喜欢，我希望一本书生成一个文件夹，里面结构如下
+
+book-id/
+	index.html
+	mp3/
+		1.mp3
+		2.mp3
+		5.mp3
+	jpg/
+		1.jpg
+		2.jpg
+		3.jpg
+	css/
+		local.css
+	js/
+		local.js
+
+我现在倾向于结合 turn.js 和 flowplayer
+https://github.com/blasten/turn.js
+http://flash.flowplayer.org/plugins/streaming/audio.html
+
+index.html 的主要内容类似
+
+<div class='page'>
+	<img src='0.jpg'>
+	<audio controls>
+	  <source src="0.mp3" type="audio/mpeg">
+	</audio>
+</div>
+<div class='page'>
+	<img src='1.jpg'>
+</div>
+<div class='page'>
+	<img src='2.jpg'>
+</div>
+<div class='page'>
+	<img src='3.jpg'>
+	<audio controls>
+	  <source src="3.mp3" type="audio/mpeg">
+	</audio>
+</div>
+<div class='page'>
+	<img src='4.jpg'>
+</div>
