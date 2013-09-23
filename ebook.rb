@@ -2,6 +2,7 @@ require 'erubis'
 require 'find'
 require 'json'
 require 'pp'
+require 'fileutils'
 
 # 翻页js在 http://builtbywill.com/code/booklet/demos/
 
@@ -31,7 +32,7 @@ def main(path)
 		pages.map! { |e| e.sub(path, '') }.sort! # just in case it's not sorted
 		mp3json = Hash[*mp3hash[bookid]].to_json # 因为mp3hash[bookid]是数组，需要splat出来给Hash::[]使用
 		#pp mp3json
-		eruby = Erubis::Eruby.new(File.read('output/ebook-eruby.html')) # create Eruby object
+		eruby = Erubis::Eruby.new(File.read('views/ebook-eruby.html')) # create Eruby object
 		index_html =  eruby.result(binding) # get result
 		p "output/html/#{bookid}.html"
 		File.write("output/html/#{bookid}.html", index_html)
@@ -39,9 +40,19 @@ def main(path)
 
 end
 
+def copy_asset_to_output
+	# If you want to copy all contents of a directory instead of the
+	# directory itself, c.f. src/x -> dest/x, src/y -> dest/y,
+	# use following code.
+	# cp_r('src', 'dest') makes dest/src,
+	# but this doesn't.
+	FileUtils.cp_r 'views/.', 'output', :verbose => true
+end
+
 if __FILE__ == $PROGRAM_NAME
 	input = ARGV[0] || 'output/pageimg/'
 	#output = ARGV[1] || 'output/html'
   p "inputdir is #{input}"
   main input
+  copy_asset_to_output
 end
