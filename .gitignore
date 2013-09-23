@@ -1,4 +1,4 @@
-output-ebook/**/*
+output/*
 pageimg-orig/**/*.jpg
 output-ebook/pageimg/*.jpg
 output-ebook/**/*
