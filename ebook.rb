@@ -16,17 +16,24 @@ def main(path)
 	# => "book_dh79_022"
 	h = filelist.each_with_object(Hash.new { |hash, key| hash[key] = [] }) do |e, o|
 		ee = e.sub(path, '') # e without path, only filename
-		o[ee[0..12]] << ee
-		#o[e.split(/(_)/)[0..4].join] << e
+		# 文件名 book_th13_008_021.jpg		hb_cz46_030_019.jpg
+		# o[ee[0..12]] << ee # 错误 书名标志前缀长度不同
+		*bid, _ = ee.split(/_/)
+		bookid = bid.join('_').to_sym
+		o[bookid] << ee
 	end
-	#p h
+	p "共有图书 #{ h.size - 1} 本" # 减一是减去csv的header
+	#pp h.keys.sort
 	mp3list =  Find.find(path).select { |f| f =~ /.mp3$/ }
 	mp3hash = mp3list.each_with_object(Hash.new { |hash, key| hash[key] = [] }) do |e, o|
 		ee = e.sub(path, '') # e without path, only filename
 		# ["book_ys79_050_003.mp3","book_ys79_050_005.mp3"]
 		pagenumber, filename = ee.split('.')[0][-3..-1], ee
-		o[ee[0..12]] << (pagenumber.to_i - 1) << filename
+		*bid, _ = ee.split(/_/)
+		bookid = bid.join('_').to_sym
+		o[bookid] << (pagenumber.to_i - 1) << filename
 	end
+
 	h.each do |bookid, pages|
 		title = ''
 		pages.map! { |e| e.sub(path, '') }.sort! # just in case it's not sorted
@@ -34,7 +41,7 @@ def main(path)
 		#pp mp3json
 		eruby = Erubis::Eruby.new(File.read('views/ebook-eruby.html')) # create Eruby object
 		index_html =  eruby.result(binding) # get result
-		p "output/html/#{bookid}.html"
+		#p "output/html/#{bookid}.html"
 		File.write("output/html/#{bookid}.html", index_html)
 	end
 
