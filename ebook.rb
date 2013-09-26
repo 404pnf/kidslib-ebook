@@ -7,7 +7,7 @@ require 'fileutils'
 # 翻页js在 http://builtbywill.com/code/booklet/demos/
 
 # usage: script.rb inputdir
-def main(path)
+def main(path, out)
 	filelist = Find.find(path).select { |f| f =~ /.jpg$/ }
 
 	# slice part of filename as hash key
@@ -42,7 +42,7 @@ def main(path)
 		eruby = Erubis::Eruby.new(File.read('views/ebook-eruby.html')) # create Eruby object
 		index_html =  eruby.result(binding) # get result
 		#p "output/html/#{bookid}.html"
-		File.write("output/html/#{bookid}.html", index_html)
+		File.write("#{out}/#{bookid}.html", index_html)
 	end
 
 end
@@ -53,13 +53,13 @@ def copy_asset_to_output
 	# use following code.
 	# cp_r('src', 'dest') makes dest/src,
 	# but this doesn't.
-	FileUtils.cp_r 'views/.', 'output', :verbose => true
+	FileUtils.cp_r 'views/.', '_output', :verbose => true
 end
 
 if __FILE__ == $PROGRAM_NAME
-	input = ARGV[0] || 'output/pageimg/'
-	#output = ARGV[1] || 'output/html'
+	input = ARGV[0] || '_output/pageimg/'
+	output = ARGV[1] || '_output/html'
   p "inputdir is #{input}"
-  main input
+  main input, output
   copy_asset_to_output
 end

@@ -1,1 +1,1 @@
-rsync -avz output/* wxkj:/var/www/ilearning/ebook/
+rsync -avz _output/* wxkj:/var/www/ilearning/ebook/
