@@ -3,13 +3,17 @@ require 'find'
 require 'json'
 require 'pp'
 require 'fileutils'
+require 'csv'
 
 # 翻页js在 http://builtbywill.com/code/booklet/demos/
 
 # usage: script.rb inputdir
 def main(path, out)
 	filelist = Find.find(path).select { |f| f =~ /.jpg$/ }
-
+	titles = CSV.read('./titles.csv').each_with_object({}) do |(_, key, title), h|
+		h[key.to_sym] = title
+	end
+	# p titles
 	# slice part of filename as hash key
 	# s = 'book_dh79_022_019.jpg'
 	# s.split(/(_)/)[0..4].join
@@ -33,9 +37,9 @@ def main(path, out)
 		bookid = bid.join('_').to_sym
 		o[bookid] << (pagenumber.to_i - 1) << filename
 	end
-
 	h.each do |bookid, pages|
-		title = ''
+		title = titles[bookid]
+		# p title
 		pages.map! { |e| e.sub(path, '') }.sort! # just in case it's not sorted
 		mp3json = Hash[*mp3hash[bookid]].to_json # 因为mp3hash[bookid]是数组，需要splat出来给Hash::[]使用
 		#pp mp3json
