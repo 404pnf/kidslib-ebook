@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>rename-img.rb</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+      <ul id="jump_to">
+        <li>
+          <a class="large" href="javascript:void(0);">Jump To &hellip;</a>
+          <a class="small" href="javascript:void(0);">+</a>
+          <div id="jump_wrapper">
+          <div id="jump_page">
+            
+              
+              <a class="source" href="convert.html">
+                convert.rb
+              </a>
+            
+              
+              <a class="source" href="ebook.html">
+                ebook.rb
+              </a>
+            
+              
+              <a class="source" href="rename-img.html">
+                rename-img.rb
+              </a>
+            
+          </div>
+        </li>
+      </ul>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>rename-img.rb</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap for-h2">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              <h2>目的</h2>
+<p>之前导入这些文件进入drupal的时候，因为导入了多次。
+有些文件名有了给重复文件重命名的数字后缀。
+比如 file.jpg 导入多次会变为 file_1.jpg, file_2.jpg 。</p>
+<p>现在我要去掉这些数字后缀。因为我的脚本不会产生druapl中重复导入出现的问题。
+因此我需要将这些文件重命名为其原始状态。</p>
+<p>这个脚本只用一次，日后很可能也不会再用了。因为日后本项目应该不会遇到相同问题。</p>
+<hr>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">require</span> <span class="string">'pp'</span>
+<span class="keyword">require</span> <span class="string">'fileutils'</span>
+
+<span class="function"><span class="keyword">def</span> <span class="title">rename_img</span><span class="params">(input)</span></span>
+  f = <span class="constant">Dir</span>[<span class="string">"<span class="subst">#{ input }</span>/*.jpg"</span>]
+  ff = f.select { |e| e =~ <span class="regexp">/_[0-9]\.jpg/</span> }
+        .map { |e| [e, e.sub(<span class="regexp">/_[0-9]\.jpg/</span>, <span class="string">'.jpg'</span>)] }
+  pp ff</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>有些文件名中还有英文单引号！
+g = f.select { |e| e =~ /&#39;/ or e =~ / / }
+     .map { |e| [e, e.gsub(/[&#39; ]/, &#39;_&#39;)] }
+pp g</p>
+<p><strong> 先noop: true </strong> 看看效果</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  ff.each { |(old, new)| <span class="constant">FileUtils</span>.mv(old, new, <span class="symbol">:verbose</span> =&gt; <span class="keyword">true</span>, <span class="symbol">:noop</span> =&gt; <span class="keyword">true</span>) }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>ff.each { |(old, new)| FileUtils.mv(old, new, :verbose =&gt; true) }
+g.each { |(old, new)| FileUtils.mv(old, new, :verbose =&gt; true) }</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="keyword">end</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>rename_img(input)</p>
+
+            </div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>
