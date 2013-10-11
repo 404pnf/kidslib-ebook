@@ -1,3 +1,20 @@
+# ## 使用方法
+#
+# 		ruby script.rb inpudir
+#
+#
+# ## 目的
+# 将输入目录的图片按书名编号手机起来，在output文件夹生成对应的图书。
+# 1. 每本图书有标题
+# 1. 每本图书有翻页效果。
+# 1. 有些页面有匹配音频。
+# 1. 显示逻辑在 views/ 模版中
+# 1. 翻页js由xb完成，音频js由tian完成。
+# 1. 翻页js在 <http://builtbywill.com/code/booklet/demos/>
+# ----
+
+# ## 库
+
 require 'erubis'
 require 'find'
 require 'json'
@@ -5,9 +22,12 @@ require 'pp'
 require 'fileutils'
 require 'csv'
 
-# 翻页js在 http://builtbywill.com/code/booklet/demos/
 
-# usage: script.rb inputdir
+
+# ## 主函数
+# 1. 选取输入目录的所有jpg文件
+# 1. 读入titles.csv
+# 1.
 def main(path, out)
 	filelist = Find.find(path).select { |f| f =~ /.jpg$/ }
 	titles = CSV.read('./titles.csv').each_with_object({}) do |(_, key, title), h|
