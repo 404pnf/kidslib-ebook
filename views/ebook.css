@@ -1,0 +1,4 @@
+body { background: url('../images/repeat_bg.jpg')}
+h1 { text-align: center; margin-bottom: 30px; }
+#player_here { background: url("../images/ebook_op_bg.png") repeat-x;bottom: -25px;height: 70px;left: 0; position: fixed; width: 100%; z-index: 100;}
+#player{ margin:8px auto;}

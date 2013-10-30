@@ -46,7 +46,7 @@ require 'csv'
 
 # ----
 # ### 正确
-# 把文件名分割后，最后一部分是页码，之前的嗾使book id。
+# 把文件名分割后，最后一部分是页码，之前的都是book id。
 #
 #      h = filelist.each_with_object(Hash.new { |hash, key| hash[key] = [] }) do |e, o|
 #      ee = File.basename(e) # 只保留文件名
@@ -96,11 +96,11 @@ def get_mp3(path)
   mp3list =  Find.find(path).select { |f| f =~ /.mp3$/ }
   mp3list.each_with_object(Hash.new { |hash, key| hash[key] = [] }) do |e, o|
     ee = File.basename(e) # ["book_ys79_050_003.mp3","book_ys79_050_005.mp3"]
-    pagenumber, filename = ee[-7..-5], ee
+    pagenumber, mp3filename = ee[-7..-5], ee
     *bid, _ = ee.split(/_/)
     bookid = bid.join('_').to_sym
 
-    o[bookid] << (pagenumber.to_i - 1) << filename
+    o[bookid] << (pagenumber.to_i - 1) << mp3filename
   end
 end
 
@@ -126,15 +126,15 @@ end
 
 # ----
 # ## 复制静态文件
-def copy_asset_to_output(out)
-  FileUtils.cp_r 'views/.', out, :verbose => true
+def copy_asset_to_output
+  FileUtils.cp_r 'views/.', '_output/', :verbose => true
 end
 
 # ----
 # ## 干活
 if __FILE__ == $PROGRAM_NAME
   input = ARGV[0] || '_output/pageimg/'
-  output = ARGV[1] || '_new_output/html'
+  output = ARGV[1] || '_output/html'
   TITLES_CSV = './titles.csv'
   p "inputdir is #{ input }"
   p "outputdir is #{ output }"
@@ -142,5 +142,5 @@ if __FILE__ == $PROGRAM_NAME
   jpg, titles, mp3 = get_jpg(input), get_title(TITLES_CSV), get_mp3(input)
   merge_and_write jpg, mp3, titles, output # 注意要严格按照顺序传入
 
-  copy_asset_to_output output
+  copy_asset_to_output
 end
