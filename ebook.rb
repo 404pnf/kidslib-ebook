@@ -2,7 +2,6 @@
 #
 #     ruby script.rb inpudir
 
-
 # ----
 # ## 目的
 # 将输入目录的图片按书名编号手机起来，在output文件夹生成对应的图书。
@@ -31,7 +30,6 @@ require 'csv'
 # 1. 读入titles.csv 格式为 nid, id, title 其中id是书的编号，title就是题目。nid是之前drupal中用到的
 # 1. 每个jpg或mp3文件的文件名中都包含该书的唯一id，这个id是和titles.csv中id对应的
 # 1. 文件名中的唯一id不能简单粗暴地用字符串长度来获得，因为不同书的id长度也不同！
-
 
 # ----
 # ## 如何从jpg文件名中获得图书id
@@ -127,20 +125,22 @@ end
 # ----
 # ## 复制静态文件
 def copy_asset_to_output
-  FileUtils.cp_r 'views/.', '_output/', :verbose => true
+  FileUtils.cp_r 'views/.', '_output/', verbose: true
 end
 
 # ----
 # ## 干活
-if __FILE__ == $PROGRAM_NAME
-  input = ARGV[0] || '_output/pageimg/'
-  output = ARGV[1] || '_output/html'
-  TITLES_CSV = './titles.csv'
+def ebook
+  input = '_output/pageimg/'
+  output = '_output/html'
+  titles_csv = './titles.csv'
   p "inputdir is #{ input }"
   p "outputdir is #{ output }"
 
-  jpg, titles, mp3 = get_jpg(input), get_title(TITLES_CSV), get_mp3(input)
+  jpg, titles, mp3 = get_jpg(input), get_title(titles_csv), get_mp3(input)
   merge_and_write jpg, mp3, titles, output # 注意要严格按照顺序传入
 
   copy_asset_to_output
 end
+
+ebook if __FILE__ == $PROGRAM_NAME

@@ -20,14 +20,14 @@ def rename_img(input)
   pp ff
 
   # 有些文件名中还有英文单引号！
-  #g = f.select { |e| e =~ /'/ or e =~ / / }
+  # g = f.select { |e| e =~ /'/ or e =~ / / }
   #      .map { |e| [e, e.gsub(/[' ]/, '_')] }
-  #pp g
+  # pp g
 
   # ** 先noop: true ** 看看效果
-  ff.each { |(old, new)| FileUtils.mv(old, new, :verbose => true, :noop => true) }
-  #ff.each { |(old, new)| FileUtils.mv(old, new, :verbose => true) }
-  #g.each { |(old, new)| FileUtils.mv(old, new, :verbose => true) }
+  ff.each { |(old, new)| FileUtils.mv(old, new, verbose: true, noop: true) }
+  # ff.each { |(old, new)| FileUtils.mv(old, new, :verbose => true) }
+  # g.each { |(old, new)| FileUtils.mv(old, new, :verbose => true) }
 end
 
 # rename_img(input)
